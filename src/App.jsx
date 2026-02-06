@@ -22,7 +22,8 @@ function App() {
         {/* search filters */}
         <MySearchFilters />
         {/* sliders */}
-        <MySlider title="Trending Now" search="Game of Thrones" />
+        <MySlider title="Trending Now" search="Game of Thrones"/>
+        {/* <MySlider title="Watch It Again" search="The Witcher" /> */}
       </main>
       <footer>
         <MyFooter />

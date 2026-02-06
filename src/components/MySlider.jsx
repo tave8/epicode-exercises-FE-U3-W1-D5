@@ -1,5 +1,6 @@
 import { Component } from "react"
 import SimpleSlider from "../assets/js/SimpleSlider"
+import MySlide from "./MySlide"
 import { Container, Row, Col, CardGroup, Card, Spinner, Alert } from "react-bootstrap"
 
 class MySlider extends Component {
@@ -10,6 +11,7 @@ class MySlider extends Component {
     films: [],
     isLoading: true,
     isError: false,
+    simpleSlider: null,
   }
 
   async searchFilmsAndUpdateState() {
@@ -47,6 +49,10 @@ class MySlider extends Component {
 
   componentDidMount() {
     this.searchFilmsAndUpdateState()
+
+    // this.state.simpleSlider = new SimpleSlider({
+    //   targetSelector: "#simple-slider1",
+    // })
   }
 
   //   UPDATE STATE HELPERS
@@ -75,9 +81,15 @@ class MySlider extends Component {
 
         {/* carousel/slider */}
         <Row>
-
+            
           {/* slides/carousel cards */}
-        
+          {this.state.films.map((film) => {
+            return (
+              <Col key={film.imdbID}>
+                <MySlide film={film} />
+              </Col>
+            )
+          })}
 
           {/* spinner: loading */}
           {this.state.isLoading && (
