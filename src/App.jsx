@@ -23,7 +23,8 @@ function App() {
         <MySearchFilters />
         {/* sliders */}
         <MySlider title="Trending Now" search="Game of Thrones" id="simple-slider1"/>
-        {/* <MySlider title="Watch It Again" search="The Witcher" /> */}
+        <MySlider title="Watch It Again" search="The Witcher" id="simple-slider2"/>
+        <MySlider title="New Releases" search="Hunger Games" id="simple-slider3"/>
       </main>
       <footer>
         <MyFooter />

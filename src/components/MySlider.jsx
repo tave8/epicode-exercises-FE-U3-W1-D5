@@ -51,9 +51,14 @@ class MySlider extends Component {
     this.searchFilmsAndUpdateState()
 
     this.state.simpleSlider = new SimpleSlider({
-      targetSelector: "#simple-slider1",
+      targetSelector: `#${this.props.id}`,
       scrollBy: 400,
     })
+
+    console.log(this.state.simpleSlider)
+    //     if (this.state.simpleSlider) {
+    //     this.state.simpleSlider.positionButtons()
+    // }
   }
 
   //   UPDATE STATE HELPERS
@@ -83,16 +88,16 @@ class MySlider extends Component {
         {/* carousel/slider */}
         <Row className="simple-slider" id={this.props.id}>
           <Col>
-            <Row className="cards row-cols-1 row-cols-md-4 row-cols-lg-6" style={{ height: "150px" }}>
+            <div className="cards" style={{  }}>
               {/* slides/carousel cards */}
               {this.state.films.map((film) => {
                 return (
-                  <Col key={film.imdbID}>
+                  <div key={film.imdbID}>
                     <MySlide film={film} />
-                  </Col>
+                  </div>
                 )
               })}
-            </Row>
+            </div>
           </Col>
         </Row>
 
