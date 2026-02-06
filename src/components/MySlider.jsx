@@ -1,6 +1,6 @@
 import { Component } from "react"
 import SimpleSlider from "../assets/js/SimpleSlider"
-import { Container, Row, Col, CardGroup, Card, Spinner } from "react-bootstrap"
+import { Container, Row, Col, CardGroup, Card, Spinner, Alert } from "react-bootstrap"
 
 class MySlider extends Component {
   static OMDP_API_KEY = "3571ac08"
@@ -73,12 +73,25 @@ class MySlider extends Component {
           </Col>
         </Row>
 
-        {/* slides */}
+        {/* carousel/slider */}
         <Row>
-            {/* spinner */}
-            {/* {this.state.isLoading && (
 
-            )} */}
+          {/* slides/carousel cards */}
+        
+
+          {/* spinner: loading */}
+          {this.state.isLoading && (
+            <div className="text-center mt-3">
+              <Spinner variant="danger" animation="border" />
+            </div>
+          )}
+
+          {/* alert: error */}
+          {this.state.isError && (
+            <Alert variant="danger">
+              <Alert.Heading>Problem while loading</Alert.Heading>
+            </Alert>
+          )}
         </Row>
       </Container>
     )
