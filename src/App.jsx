@@ -11,6 +11,8 @@ import MyFooter from "./components/MyFooter"
 
 // pages components
 import HomeMain from "./components/home/HomeMain"
+import ProfileMain from "./components/profile/ProfileMain"
+import SettingsMain from "./components/settings/SettingsMain"
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
       <main>
         <HomeMain />
         {/* <ProfileMain /> */}
+        {/* <SettingsMain /> */}
       </main>
       <footer>
         <MyFooter />

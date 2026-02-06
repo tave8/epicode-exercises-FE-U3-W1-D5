@@ -1,17 +1,17 @@
 import { Component } from "react"
 
-// profile page components
-import MyProfileTitle from "./components/profile/MyTitle"
-import MyProfileSettings from "./components/profile/MySettings"
-import MyProfileActions from "./components/profile/MyActions"
+// profile components
+// import MyTitle from "./components/profile/MyTitle"
+// import MySettings from "./components/profile/MySettings"
+// import MyActions from "./components/profile/MyActions"
 
 class ProfileMain extends Component {
   render() {
     return (
       <>
-        <MyProfileTitle />
+        {/* <MyProfileTitle />
         <MyProfileSettings />
-        <MyProfileActions />
+        <MyProfileActions /> */}
       </>
     )
   }
