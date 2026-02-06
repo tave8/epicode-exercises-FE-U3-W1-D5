@@ -52,7 +52,7 @@ class MySlider extends Component {
 
     this.state.simpleSlider = new SimpleSlider({
       targetSelector: "#simple-slider1",
-      scrollBy: 400
+      scrollBy: 400,
     })
   }
 
@@ -83,7 +83,7 @@ class MySlider extends Component {
         {/* carousel/slider */}
         <Row className="simple-slider" id={this.props.id}>
           <Col>
-            <Row className="cards row-cols-1 row-cols-md-4 row-cols-lg-6">
+            <Row className="cards row-cols-1 row-cols-md-4 row-cols-lg-6" style={{ height: "150px" }}>
               {/* slides/carousel cards */}
               {this.state.films.map((film) => {
                 return (
@@ -94,21 +94,27 @@ class MySlider extends Component {
               })}
             </Row>
           </Col>
-
-          {/* spinner: loading */}
-          {this.state.isLoading && (
-            <div className="text-center mt-3">
-              <Spinner variant="danger" animation="border" />
-            </div>
-          )}
-
-          {/* alert: error */}
-          {this.state.isError && (
-            <Alert variant="danger">
-              <Alert.Heading>Problem while loading</Alert.Heading>
-            </Alert>
-          )}
         </Row>
+
+        {/* loading or error */}
+        {(this.state.isLoading || this.state.isError) && (
+          <Row>
+            {/* spinner: loading */}
+            {this.state.isLoading && (
+              <div className="text-center">
+                <Spinner variant="danger" animation="border" />
+              </div>
+            )}
+
+            {/* alert: error */}
+            {this.state.isError && (
+              <Alert variant="danger">
+                <Alert.Heading>Problem while loading</Alert.Heading>
+              </Alert>
+            )}
+          </Row>
+        )}
+
       </Container>
     )
   }

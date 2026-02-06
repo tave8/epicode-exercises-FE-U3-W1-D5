@@ -1,4 +1,5 @@
 import { Component } from "react"
+import { Container, Row, Col, CardGroup, Card, Spinner, Alert, Image } from "react-bootstrap"
 
 class MySlide extends Component {
   state = {
@@ -6,10 +7,14 @@ class MySlide extends Component {
   }
 
   componentDidMount() {
-    
+
   }
   render() {
-    return <p>{this.state.film.Title}</p>
+    return (
+        <>
+            <Image src={this.state.film.Poster} fluid style={{  }} />
+        </>
+    )
   }
 }
 
