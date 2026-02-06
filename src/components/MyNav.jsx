@@ -4,10 +4,10 @@ import { Container, Row, Col, Nav, Navbar, NavDropdown, Image } from "react-boot
 class MyNav extends Component {
   render() {
     return (
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar data-bs-theme="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">
-            <Image src="https://placedog.net/200/200"/>
+            <Image src="/img/netflix_logo.png" fluid style={{ maxWidth: "80px" }}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -1,5 +1,11 @@
+// styles
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
+import "./assets/css/header.css"
+import "./assets/css/netflix-scroller.css"
+import "./assets/css/checkbox.css"
+
+// react components
 import MyNav from "./components/MyNav"
 import MyFooter from "./components/MyFooter"
 import MySlider from "./components/MySlider"
