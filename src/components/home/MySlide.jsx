@@ -6,12 +6,18 @@ class MySlide extends Component {
     film: this.props.film,
   }
 
-  componentDidMount() {
+  // gestisci caricamento non andato a buon fine
+  handleImageError(event) {
+    const img = event.target
+    img.remove()
   }
+
+  componentDidMount() {}
+
   render() {
     return (
       <>
-        <Image src={this.state.film.Poster} fluid style={{ minWidth: "200px", objectFit: "contain" }} />
+        <Image src={this.state.film.Poster} fluid style={{ minWidth: "200px", objectFit: "contain" }} onError={this.handleImageError} />
       </>
     )
   }

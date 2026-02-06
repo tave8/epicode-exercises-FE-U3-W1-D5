@@ -116,7 +116,7 @@ class MySlider extends Component {
                 <Alert.Heading>Problem while loading</Alert.Heading>
               </Alert>
             )}
-          </Row>
+          </Row> 
         )}
       </Container>
     )
