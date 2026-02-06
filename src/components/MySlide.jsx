@@ -6,7 +6,7 @@ class MySlide extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted myslide", this.state)
+    
   }
   render() {
     return <p>{this.state.film.Title}</p>

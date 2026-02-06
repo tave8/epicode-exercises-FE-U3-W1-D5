@@ -50,9 +50,10 @@ class MySlider extends Component {
   componentDidMount() {
     this.searchFilmsAndUpdateState()
 
-    // this.state.simpleSlider = new SimpleSlider({
-    //   targetSelector: "#simple-slider1",
-    // })
+    this.state.simpleSlider = new SimpleSlider({
+      targetSelector: "#simple-slider1",
+      scrollBy: 400
+    })
   }
 
   //   UPDATE STATE HELPERS
@@ -80,16 +81,19 @@ class MySlider extends Component {
         </Row>
 
         {/* carousel/slider */}
-        <Row>
-            
-          {/* slides/carousel cards */}
-          {this.state.films.map((film) => {
-            return (
-              <Col key={film.imdbID}>
-                <MySlide film={film} />
-              </Col>
-            )
-          })}
+        <Row className="simple-slider" id={this.props.id}>
+          <Col>
+            <Row className="cards row-cols-1 row-cols-md-4 row-cols-lg-6">
+              {/* slides/carousel cards */}
+              {this.state.films.map((film) => {
+                return (
+                  <Col key={film.imdbID}>
+                    <MySlide film={film} />
+                  </Col>
+                )
+              })}
+            </Row>
+          </Col>
 
           {/* spinner: loading */}
           {this.state.isLoading && (

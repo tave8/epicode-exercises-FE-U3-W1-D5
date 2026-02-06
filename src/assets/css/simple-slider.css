@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.simple-slider > .cards {
+.simple-slider  .cards {
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -16,7 +16,7 @@
   display: none;
 }
 
-.simple-slider > .buttons > * {
+.simple-slider  .buttons > * {
   position: absolute;
   width: min-content;
   /* min-height: 100%; */
@@ -28,16 +28,16 @@
   color: black;
 }
 
-.simple-slider > .buttons > .left {
+.simple-slider  .buttons > .left {
 }
 
-.simple-slider > .cards img {
+.simple-slider  .cards img {
   cursor: pointer;
   transition: all ease-in 0.5s;
   z-index: 10000;
   height: 100%;
 }
 
-.simple-slider > .cards img:hover {
+.simple-slider  .cards img:hover {
   transform: scale(1.2);
 }
