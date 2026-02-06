@@ -23,9 +23,9 @@ function App() {
         <MyNav />
       </header>
       <main>
-        {/* <HomeMain /> */}
+        <HomeMain />
         {/* <ProfileMain /> */}
-        <SettingsMain />
+        {/* <SettingsMain /> */}
       </main>
       <footer>
         <MyFooter />

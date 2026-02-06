@@ -7,15 +7,12 @@ class MySlide extends Component {
   }
 
   componentDidMount() {
-
   }
   render() {
     return (
-        <>
-            <Image src={this.state.film.Poster} fluid 
-            style={{ minWidth: "200px", objectFit: "contain" }} 
-            />
-        </>
+      <>
+        <Image src={this.state.film.Poster} fluid style={{ minWidth: "200px", objectFit: "contain" }} />
+      </>
     )
   }
 }

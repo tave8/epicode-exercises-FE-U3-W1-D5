@@ -2,16 +2,36 @@ import { Component } from "react"
 // home components
 import MySlider from "./MySlider"
 import MySearchFilters from "./MySearchFilters"
+// import MyAISummary from "./MyAIFilmSuggestion"
 
+const filmInfos = [
+  {
+    title: "Trending Now",
+    search: "Game of Thrones",
+    sliderId: "simple-slider1",
+  },
+  {
+    title: "Watch It Again",
+    search: "The Witcher",
+    sliderId: "simple-slider2",
+  },
+  {
+    title: "New Releases",
+    search: "Hunger Games",
+    sliderId: "simple-slider3",
+  },
+]
 
 class HomeMain extends Component {
   render() {
     return (
       <>
         <MySearchFilters />
-        <MySlider title="Trending Now" search="Game of Thrones" id="simple-slider1" />
-        <MySlider title="Watch It Again" search="The Witcher" id="simple-slider2" />
-        <MySlider title="New Releases" search="Hunger Games" id="simple-slider3" />
+        {/* <MyAISummary /> */}
+
+        {filmInfos.map((filmInfo, i) => {
+          return <MySlider key={i} title={filmInfo.title} search={filmInfo.search} id={filmInfo.sliderId} />
+        })}
       </>
     )
   }
