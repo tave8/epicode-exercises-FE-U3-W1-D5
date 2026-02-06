@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons";
 class MyFooter extends Component {
   render() {
     return (
-      <Container fluid>
+      <Container fluid className="mt-5">
         <Row className="justify-content-center">
           <Col xs={12} md={9} lg={6}>
             <Row className="gap-3">
