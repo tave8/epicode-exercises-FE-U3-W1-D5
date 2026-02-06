@@ -1,7 +1,6 @@
 import { Component } from "react"
 import { Container, Row, Col, Nav, Navbar, NavDropdown, Image, Button } from "react-bootstrap"
-
-// TODO: bootstrap icons. install react-bootstrap-icons
+import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons";
 
 class MyFooter extends Component {
   render() {
@@ -13,16 +12,16 @@ class MyFooter extends Component {
               {/* Social icons */}
               <Col xs={12} className="fs-4 d-flex gap-3">
                 <span>
-                  <i className="bi bi-facebook"></i>
+                  <Facebook />
                 </span>
                 <span>
-                  <i className="bi bi-instagram"></i>
+                  <Instagram />
                 </span>
                 <span>
-                  <i className="bi bi-twitter"></i>
+                  <Twitter /> 
                 </span>
                 <span>
-                  <i className="bi bi-youtube"></i>
+                  <Youtube />
                 </span>
               </Col>
 
