@@ -1,26 +1,64 @@
 import { Component } from "react"
-import { Container, Row, Col, Nav, Navbar, NavDropdown, Image } from "react-bootstrap"
+import { Container, Row, Col, Nav, Navbar, NavDropdown, Image, Dropdown } from "react-bootstrap"
+import { Search, BellFill } from "react-bootstrap-icons"
 
 class MyNav extends Component {
   render() {
     return (
-      <Navbar data-bs-theme="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#home">
-            <Image src="/img/netflix_logo.png" fluid style={{ maxWidth: "80px" }}/>
+          {/* Logo */}
+          <Navbar.Brand href="./">
+            <Image src="/img/netflix_logo.png" style={{ maxWidth: "80px" }} fluid />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+
+          {/* Hamburger */}
+          <Navbar.Toggle aria-controls="main-navbar" />
+
+          <Navbar.Collapse id="main-navbar">
+            {/* Left menu */}
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="./" className="text-white">
+                Home
+              </Nav.Link>
+              <Nav.Link href="#" className="text-white">
+                TV Shows
+              </Nav.Link>
+              <Nav.Link href="#" className="text-white">
+                Movies
+              </Nav.Link>
+              <Nav.Link href="#" className="text-white">
+                Recently Added
+              </Nav.Link>
+              <Nav.Link href="#" className="text-white">
+                My List
+              </Nav.Link>
+            </Nav>
+
+            {/* Right side */}
+            <Nav className="d-flex align-items-center gap-4">
+              <Nav.Link className="text-white">
+                <Search />
+              </Nav.Link>
+
+              <Nav.Link className="text-white">KIDS</Nav.Link>
+
+              <Nav.Link className="text-white">
+                <BellFill />
+              </Nav.Link>
+
+              {/* Profile dropdown */}
+              <Dropdown align="end">
+                <Dropdown.Toggle variant="transparent" className="border-0">
+                  <Image src="https://placedog.net/50/50" roundedCircle style={{ width: "20px" }} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="./profile.html">Profile</Dropdown.Item>
+                  <Dropdown.Item href="./settings.html">Settings</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
