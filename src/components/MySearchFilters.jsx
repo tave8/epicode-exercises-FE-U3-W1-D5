@@ -1,5 +1,7 @@
 import { Component } from "react"
 import { Container, Row, Col, Nav, Navbar, NavDropdown, Image, Button, ButtonGroup, Dropdown } from "react-bootstrap"
+import { Stack, Grid } from "react-bootstrap-icons";
+
 
 class MySearchFilters extends Component {
   render() {
@@ -26,14 +28,14 @@ class MySearchFilters extends Component {
             <Col xs={12} md={3} className="text-end">
               <ButtonGroup>
                 <Button variant="outline-light" className="bg-transparent">
-                  <i className="bi bi-stack"></i>
+                  <Stack />
                 </Button>
                 <Button variant="outline-light" className="bg-transparent">
-                  <i className="bi bi-grid"></i>
+                  <Grid />
                 </Button>
               </ButtonGroup>
             </Col>
-            
+
           </Row>
         </Container>
       </section>
