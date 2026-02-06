@@ -1,5 +1,5 @@
 import { Component } from "react"
-import SimpleSlider from "../assets/js/SimpleSlider"
+import SimpleSlider from "../../assets/js/SimpleSlider"
 import MySlide from "./MySlide"
 import { Container, Row, Col, CardGroup, Card, Spinner, Alert } from "react-bootstrap"
 
@@ -90,9 +90,9 @@ class MySlider extends Component {
         <Row className="simple-slider" id={this.props.id}>
           <div className="cards" style={{}}>
             {/* slides/carousel cards */}
-            {this.state.films.map((film) => {
+            {this.state.films.map((film, i) => {
               return (
-                <div key={film.imdbID}>
+                <div key={film.imdbID + i}>
                   <MySlide film={film} />
                 </div>
               )

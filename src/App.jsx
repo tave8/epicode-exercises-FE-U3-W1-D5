@@ -8,8 +8,8 @@ import "./assets/css/checkbox.css"
 // react components
 import MyNav from "./components/MyNav"
 import MyFooter from "./components/MyFooter"
-import MySlider from "./components/MySlider"
-import MySearchFilters from "./components/MySearchFilters"
+import MySlider from "./components/home/MySlider"
+import MySearchFilters from "./components/home/MySearchFilters"
 
 function App() {
 
