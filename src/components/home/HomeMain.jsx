@@ -2,7 +2,7 @@ import { Component } from "react"
 // home components
 import MySlider from "./MySlider"
 import MySearchFilters from "./MySearchFilters"
-// import MyAISummary from "./MyAIFilmSuggestion"
+import MyAIFilmSuggestion from "./MyAIFilmSuggestion"
 
 const filmInfos = [
   {
@@ -27,8 +27,8 @@ class HomeMain extends Component {
     return (
       <>
         <MySearchFilters />
-        {/* <MyAISummary /> */}
-
+        <MyAIFilmSuggestion filmInfos={filmInfos} />
+        {/* sliders */}
         {filmInfos.map((filmInfo, i) => {
           return <MySlider key={i} title={filmInfo.title} search={filmInfo.search} id={filmInfo.sliderId} />
         })}
