@@ -2,7 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
 import "./assets/css/header.css"
-import "./assets/css/netflix-scroller.css"
+import "./assets/css/simple-slider.css"
 import "./assets/css/checkbox.css"
 
 // react components
