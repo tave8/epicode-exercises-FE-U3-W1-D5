@@ -1,6 +1,8 @@
 import { Component } from "react"
 import { Container, Row, Col, Nav, Navbar, NavDropdown, Image, Button } from "react-bootstrap"
 
+// TODO: bootstrap icons. install react-bootstrap-icons
+
 class MyFooter extends Component {
   render() {
     return (
