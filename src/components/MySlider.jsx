@@ -48,12 +48,13 @@ class MySlider extends Component {
   }
 
   componentDidMount() {
+      this.state.simpleSlider = new SimpleSlider({
+        targetSelector: `#${this.props.id}`,
+        scrollBy: 400,
+        givenCardsContainerHeight: 300
+      })
     this.searchFilmsAndUpdateState()
 
-    this.state.simpleSlider = new SimpleSlider({
-      targetSelector: `#${this.props.id}`,
-      scrollBy: 400,
-    })
 
     console.log(this.state.simpleSlider)
     //     if (this.state.simpleSlider) {
@@ -87,18 +88,16 @@ class MySlider extends Component {
 
         {/* carousel/slider */}
         <Row className="simple-slider" id={this.props.id}>
-          <Col>
-            <div className="cards" style={{  }}>
-              {/* slides/carousel cards */}
-              {this.state.films.map((film) => {
-                return (
-                  <div key={film.imdbID}>
-                    <MySlide film={film} />
-                  </div>
-                )
-              })}
-            </div>
-          </Col>
+          <div className="cards" style={{}}>
+            {/* slides/carousel cards */}
+            {this.state.films.map((film) => {
+              return (
+                <div key={film.imdbID}>
+                  <MySlide film={film} />
+                </div>
+              )
+            })}
+          </div>
         </Row>
 
         {/* loading or error */}
@@ -119,7 +118,6 @@ class MySlider extends Component {
             )}
           </Row>
         )}
-
       </Container>
     )
   }

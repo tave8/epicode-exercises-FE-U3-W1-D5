@@ -1,10 +1,11 @@
 class SimpleSlider {
-  constructor({ targetSelector, scrollBy = 300 }) {
+  constructor({ targetSelector, scrollBy = 300, givenCardsContainerHeight=null }) {
     // valid css selector of the element that
     // we're turning into a slider
     this.targetSelector = targetSelector;
     // scroll by how many pixels
     this.scrollBy = scrollBy;
+    this.givenCardsContainerHeight = givenCardsContainerHeight
 
     if (document.readyState == "complete") {
       this.init();
@@ -107,7 +108,7 @@ class SimpleSlider {
   };
 
   getAppropriateButtonHeight = (cardsContainer, button) => {
-    const cardsContainerHeight = cardsContainer.offsetHeight;
+    const cardsContainerHeight = this.givenCardsContainerHeight || cardsContainer.offsetHeight;
     const buttonHeight = button.offsetHeight;
     const result = cardsContainerHeight / 2 - buttonHeight / 2;
     return `${result}px`;
