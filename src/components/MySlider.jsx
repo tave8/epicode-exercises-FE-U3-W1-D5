@@ -1,21 +1,30 @@
 import { Component } from "react"
 import SimpleSlider from "../assets/js/SimpleSlider"
-import { Container, Row, Col, CardGroup, Card } from "react-bootstrap"
+import { Container, Row, Col, CardGroup, Card, Spinner } from "react-bootstrap"
 
 class MySlider extends Component {
   static OMDP_API_KEY = "3571ac08"
 
   state = {
     searchQuery: this.props.search,
+    films: [],
+    isLoading: true,
+    isError: false,
   }
 
   async searchFilmsAndUpdateState() {
     try {
+      this.updateIsLoading(true)
+      this.updateIsError(false)
       const respData = await this.searchRemoteFilms()
       const films = respData.Search
+      this.updateFilms(films)
+      this.updateIsLoading(false)
       console.log(films)
     } catch (err) {
-        console.error(err)
+      console.error(err)
+      this.updateIsLoading(false)
+      this.updateIsError(true)
     }
   }
 
@@ -24,7 +33,7 @@ class MySlider extends Component {
     const config = {}
     const resp = await fetch(url, config)
     if (!resp.ok) {
-        throw Error("error while searching remote films: status: ", resp.status)
+      throw Error("error while searching remote films: status: ", resp.status)
     }
     const data = await resp.json()
     return data
@@ -40,6 +49,20 @@ class MySlider extends Component {
     this.searchFilmsAndUpdateState()
   }
 
+  //   UPDATE STATE HELPERS
+
+  updateFilms(newFilms) {
+    this.setState({ films: newFilms })
+  }
+
+  updateIsLoading(val) {
+    this.setState({ isLoading: val })
+  }
+
+  updateIsError(val) {
+    this.setState({ isError: val })
+  }
+
   render() {
     return (
       <Container fluid className="mt-5">
@@ -51,7 +74,12 @@ class MySlider extends Component {
         </Row>
 
         {/* slides */}
-        <Row></Row>
+        <Row>
+            {/* spinner */}
+            {/* {this.state.isLoading && (
+
+            )} */}
+        </Row>
       </Container>
     )
   }
