@@ -23,8 +23,8 @@ function App() {
       </header>
       <main>
         {/* <HomeMain /> */}
-        <ProfileMain />
-        {/* <SettingsMain /> */}
+        {/* <ProfileMain /> */}
+        <SettingsMain />
       </main>
       <footer>
         <MyFooter />
