@@ -83,7 +83,7 @@ class MyAIFilmSuggestion extends Component {
               {/* spinner */}
               {this.state.isLoading && (
                 <div className="text-center mt-3">
-                  <Spinner variant="danger" animation="border" />
+                   <Spinner animation="grow" variant="danger" />
                 </div>
               )}
             </Col>
